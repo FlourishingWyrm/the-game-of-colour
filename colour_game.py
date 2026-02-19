@@ -66,7 +66,7 @@ class menu():
             self.entry.delete(0, "end")
     def playgame_goto(self,rounds_wanted):
         self.frame.destroy()
-        playgame(rounds_wanted,0)
+        playgame(rounds_wanted,0+1)
 
 
 class playgame():
@@ -171,9 +171,12 @@ class playgame():
 
     def playgame_goto(self,n,x):
         """nexts the round """
+        self.game_frame.destroy()
         if x >= n:
-            self.game_frame.destroy()
             playgame(x,n)
+        else:
+            menu()
+            stats()
 
 class hell():
     """the most usless help page ever"""
